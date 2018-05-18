@@ -12,6 +12,7 @@ import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 
+import com.bumptech.glide.Glide;
 import com.github.paolorotolo.appintro.util.CustomFontCache;
 import com.github.paolorotolo.appintro.util.LogHelper;
 
@@ -100,7 +101,8 @@ public abstract class AppIntroBaseFragment extends Fragment implements ISlideSel
                 d.setTypeface(CustomFontCache.get(descTypeface, getContext()));
             }
         }
-        i.setImageResource(drawable);
+//        i.setImageResource(drawable);
+        Glide.with(this).load(drawable).into(i);
         mainLayout.setBackgroundColor(bgColor);
 
         return v;
